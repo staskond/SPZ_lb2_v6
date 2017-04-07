@@ -16,5 +16,10 @@ namespace sh_lb2_v6
         {
             InitializeComponent();
         }
+
+        private void AddDepartment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
