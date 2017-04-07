@@ -40,7 +40,8 @@ namespace sh_lb2_v6
         }
         public void DeliteEmployee(Employee _employee)
         {
-            ListEmployee.Remove(_employee);
+            if(ListEmployee != null) 
+                ListEmployee.Remove(_employee);
         }
         
     }

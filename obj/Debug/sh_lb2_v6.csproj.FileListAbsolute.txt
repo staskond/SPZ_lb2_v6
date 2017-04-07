@@ -1,0 +1,12 @@
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\bin\Debug\sh_lb2_v6.exe.config
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\bin\Debug\sh_lb2_v6.exe
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\bin\Debug\sh_lb2_v6.pdb
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.csprojResolveAssemblyReference.cache
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.DepartmentOptions.resources
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.EmployeeOptions.resources
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.s.resources
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.Properties.Resources.resources
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.Sort.resources
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.csproj.GenerateResource.Cache
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.exe
+c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.pdb

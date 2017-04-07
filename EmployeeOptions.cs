@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace sh_lb2_v6
 {
-    public partial class AddEmpoyee : Form
+    public partial class EmployeeOptions : Form
     {
-        public AddEmpoyee()
+        public EmployeeOptions()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
