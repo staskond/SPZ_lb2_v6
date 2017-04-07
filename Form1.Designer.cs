@@ -1,6 +1,6 @@
 ﻿namespace sh_lb2_v6
 {
-    partial class Form1
+    partial class s
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -36,6 +36,8 @@
             this.buttonAddEmployee = new System.Windows.Forms.Button();
             this.buttonDelEmployee = new System.Windows.Forms.Button();
             this.buttonChangeEmployee = new System.Windows.Forms.Button();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.buttonSortEmployees = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxDep
@@ -63,6 +65,7 @@
             this.buttonAddDep.TabIndex = 2;
             this.buttonAddDep.Text = "Добавить отдел";
             this.buttonAddDep.UseVisualStyleBackColor = true;
+            this.buttonAddDep.Click += new System.EventHandler(this.buttonAddDep_Click);
             // 
             // buttonDelDep
             // 
@@ -110,11 +113,23 @@
             this.buttonChangeEmployee.Text = "Изменить сотруднику";
             this.buttonChangeEmployee.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // buttonSortEmployees
+            // 
+            this.buttonSortEmployees.Location = new System.Drawing.Point(217, 444);
+            this.buttonSortEmployees.Name = "buttonSortEmployees";
+            this.buttonSortEmployees.Size = new System.Drawing.Size(166, 23);
+            this.buttonSortEmployees.TabIndex = 8;
+            this.buttonSortEmployees.TabStop = false;
+            this.buttonSortEmployees.Text = "Сортировать сотрудников";
+            this.buttonSortEmployees.UseVisualStyleBackColor = true;
+            this.buttonSortEmployees.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // s
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 482);
+            this.ClientSize = new System.Drawing.Size(408, 482);
+            this.Controls.Add(this.buttonSortEmployees);
             this.Controls.Add(this.buttonChangeEmployee);
             this.Controls.Add(this.buttonDelEmployee);
             this.Controls.Add(this.buttonAddEmployee);
@@ -123,8 +138,9 @@
             this.Controls.Add(this.buttonAddDep);
             this.Controls.Add(this.listBoxEmployee);
             this.Controls.Add(this.listBoxDep);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "s";
+            this.Text = "Accounting";
+            this.Load += new System.EventHandler(this.s_Load);
             this.ResumeLayout(false);
 
         }
@@ -139,6 +155,8 @@
         private System.Windows.Forms.Button buttonAddEmployee;
         private System.Windows.Forms.Button buttonDelEmployee;
         private System.Windows.Forms.Button buttonChangeEmployee;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.Button buttonSortEmployees;
     }
 }
 
