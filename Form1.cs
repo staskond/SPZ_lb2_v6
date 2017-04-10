@@ -14,7 +14,17 @@ namespace sh_lb2_v6
     {
         public s()
         {
+            
             InitializeComponent();
+            List<Department> DepartamentList = new List<Department>
+            {
+                new Department {departmantName = "ГорНефть", numberOfMaxEmployees = 425, managerName = "Мавсисян Георгий" },
+                new Department {departmantName = "Облосной Водоканал",numberOfMaxEmployees = 17, managerName = "Дельчинко Владислав"},
+                new Department {departmantName = "ХНУРЭ",numberOfMaxEmployees = 2100, managerName = "Андреев Сергей"},
+                new Department {departmantName = "Aldec",numberOfMaxEmployees = 32, managerName = "Алексеев Николай"}
+            };
+            listBoxDep.DataSource = DepartamentList;
+            listBoxDep.DisplayMember = "departmantName";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -34,7 +44,14 @@ namespace sh_lb2_v6
 
         private void buttonAddDep_Click(object sender, EventArgs e)
         {
+            DepartmentOptions DepForm = new DepartmentOptions();
+            DepForm.Show();
 
+        }
+
+        private void buttonDelDep_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

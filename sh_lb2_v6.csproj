@@ -100,6 +100,7 @@
     <EmbeddedResource Include="Sort.resx">
       <DependentUpon>Sort.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Department.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

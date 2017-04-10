@@ -15,11 +15,19 @@ namespace sh_lb2_v6
         public DepartmentOptions()
         {
             InitializeComponent();
+            
         }
-
+        public event SendDepartament SendDepartamentEvent;
+        public delegate void SendDepartament(string s, String v, string name);
         private void AddDepartment_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void buttonApply_Click(object sender, EventArgs e)
+        {
+            
+            SendDepartamentEvent(textBoxDepName.Text, maskedTextBoxMaxEmployee.Text, textBoxManagerName.Text);
         }
     }
 }

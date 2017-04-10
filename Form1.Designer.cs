@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBoxDep = new System.Windows.Forms.ListBox();
             this.listBoxEmployee = new System.Windows.Forms.ListBox();
             this.buttonAddDep = new System.Windows.Forms.Button();
@@ -38,6 +39,10 @@
             this.buttonChangeEmployee = new System.Windows.Forms.Button();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.buttonSortEmployees = new System.Windows.Forms.Button();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxDep
@@ -76,6 +81,7 @@
             this.buttonDelDep.Text = "Удалить отдел";
             this.buttonDelDep.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonDelDep.UseVisualStyleBackColor = true;
+            this.buttonDelDep.Click += new System.EventHandler(this.buttonDelDep_Click);
             // 
             // buttonChangeDep
             // 
@@ -124,6 +130,14 @@
             this.buttonSortEmployees.UseVisualStyleBackColor = true;
             this.buttonSortEmployees.Click += new System.EventHandler(this.button1_Click);
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(sh_lb2_v6.Department);
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataSource = typeof(sh_lb2_v6.Department);
+            // 
             // s
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +155,8 @@
             this.Name = "s";
             this.Text = "Accounting";
             this.Load += new System.EventHandler(this.s_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -157,6 +173,8 @@
         private System.Windows.Forms.Button buttonChangeEmployee;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.Button buttonSortEmployees;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private System.Windows.Forms.BindingSource departmentBindingSource1;
     }
 }
 
