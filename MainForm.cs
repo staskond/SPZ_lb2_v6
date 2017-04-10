@@ -25,13 +25,12 @@ namespace sh_lb2_v6
             {
                 DepartmentOptions DepForm = new DepartmentOptions();
                 DepForm.Owner = this;
-                if(DepForm.ShowDialog() == DialogResult.OK)
+                if (DepForm.ShowDialog() == DialogResult.OK)
                 {
-                    listBoxDep.BeginUpdate();
                     DepartmentList.Add(new Department(StaticClassDep.nameDep,
                         StaticClassDep.maxEmployee,
                         StaticClassDep.ManagerName));
-                   // bsDepartment.ResetBindings(true);
+                    bsDepartment.ResetBindings(true);
                     var result = MessageBox.Show("hey", "Error Window", MessageBoxButtons.OK);
                 }
             };
