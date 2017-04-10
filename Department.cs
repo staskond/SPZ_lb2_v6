@@ -8,9 +8,9 @@ namespace sh_lb2_v6
 {
     class Department
     {
-        public String departmantName { set; get; }
-        public Int16 numberOfMaxEmployees { set; get; }
-        public String managerName { set; get; }
+        public string departmantName { set; get; }
+        public int numberOfMaxEmployees { set; get; }
+        public string managerName { set; get; }
         private List<Employee> ListEmployee = new List<Employee>();
         private string v1;
         private int v2;

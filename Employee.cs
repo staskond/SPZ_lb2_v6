@@ -8,8 +8,8 @@ namespace sh_lb2_v6
 {
     class Employee
     {
-        public String FullName { private set; get; }
-        public Decimal Salary { private set; get; }
+        public string FullName { private set; get; }
+        public decimal Salary { private set; get; }
         Employee(String _fullName, Decimal _salary)
         {
             if (_fullName.Length > 0)

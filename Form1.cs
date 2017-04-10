@@ -25,8 +25,19 @@ namespace sh_lb2_v6
             };
             listBoxDep.DataSource = DepartamentList;
             listBoxDep.DisplayMember = "departmantName";
-        }
 
+            buttonAddDep.Click += (object s, EventArgs e) =>
+            {
+                DepartmentOptions DepForm = new DepartmentOptions();
+                DepForm.Owner = this;
+                if (DepForm.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+  
+            };
+
+        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -44,11 +55,12 @@ namespace sh_lb2_v6
 
         private void buttonAddDep_Click(object sender, EventArgs e)
         {
-            DepartmentOptions DepForm = new DepartmentOptions();
-            DepForm.Show();
-
+ 
         }
-
+        public static void AddDepFromForm()
+        {
+            
+        }
         private void buttonDelDep_Click(object sender, EventArgs e)
         {
             
