@@ -13,11 +13,23 @@ namespace sh_lb2_v6
     public partial class s : Form
     {
         List<Department> DepartmentList = new List<Department>();
+        BindingSource bsDepartment = new BindingSource();
         public s()
         {
             InitializeComponent();
             listBoxDep.DataSource = DepartmentList;
             listBoxDep.DisplayMember = "numberOfMaxEmployees";
+            buttonAddDep.Click += (object s, EventArgs e) =>
+            {
+                DepartmentOptions DepForm = new DepartmentOptions();
+                DepForm.Owner = this;
+                if(DepForm.ShowDialog() == DialogResult.OK)
+                {
+                    DepartmentList.Add(new Department(StaticClassDep.nameDep,
+                        StaticClassDep.maxEmployee, 
+                        StaticClassDep.ManagerName));
+                }
+            };
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

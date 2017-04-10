@@ -15,6 +15,12 @@ namespace sh_lb2_v6
         public DepartmentOptions()
         {
             InitializeComponent();
+            btApply.Click += (object s, EventArgs e) =>
+            {
+                this.DialogResult = DialogResult.OK;
+
+                this.Close();
+            };
         }
 
         private void AddDepartment_Load(object sender, EventArgs e)

@@ -79,6 +79,7 @@
     <Compile Include="SortEmployee.Designer.cs">
       <DependentUpon>SortEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaticClassDep.cs" />
     <EmbeddedResource Include="DepartmentOptions.resx">
       <DependentUpon>DepartmentOptions.cs</DependentUpon>
     </EmbeddedResource>

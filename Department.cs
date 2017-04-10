@@ -12,11 +12,11 @@ namespace sh_lb2_v6
         public int numberOfMaxEmployees { private set; get; }
         public string managerName { private set; get; }
         private List<Employee> ListEmployee = new List<Employee>();
-        Department(String _depName, Int16 _maxEmployees, String _nameManager)
+        public Department(string _depName, int _maxEmployees, string _nameManager)
         {
             ChangeDepartment(_depName, _maxEmployees, _nameManager);
         }
-        public void ChangeDepartment(String _depName, Int16 _maxEmployees, String _nameManager)
+        public void ChangeDepartment(string _depName, int _maxEmployees, string _nameManager)
         {
             if (_depName.Length > 0 && _nameManager.Length > 0)
             {
