@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace sh_lb2_v6
 {
-    class Department
+    public class Department
     {
-        public String departmantName { private set; get; }
-        public Int16 numberOfMaxEmployees { private set; get; }
-        public String managerName { private set; get; }
+        public string departmantName { private set; get; }
+        public int numberOfMaxEmployees { private set; get; }
+        public string managerName { private set; get; }
         private List<Employee> ListEmployee = new List<Employee>();
         Department(String _depName, Int16 _maxEmployees, String _nameManager)
         {

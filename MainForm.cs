@@ -12,9 +12,12 @@ namespace sh_lb2_v6
 {
     public partial class s : Form
     {
+        List<Department> DepartmentList = new List<Department>();
         public s()
         {
             InitializeComponent();
+            listBoxDep.DataSource = DepartmentList;
+            listBoxDep.DisplayMember = "numberOfMaxEmployees";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
