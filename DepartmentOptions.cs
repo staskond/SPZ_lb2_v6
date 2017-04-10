@@ -18,9 +18,15 @@ namespace sh_lb2_v6
             btApply.Click += (object s, EventArgs e) =>
             {
                 this.DialogResult = DialogResult.OK;
-
-                this.Close();
+                if (textBoxDepName != null && textBoxManagerName != null && maskedTextBoxMaxEmployee != null)
+                {
+                    StaticClassDep.nameDep = textBoxDepName.Text;
+                    StaticClassDep.ManagerName = textBoxManagerName.Text;
+                    StaticClassDep.maxEmployee = Convert.ToInt32(maskedTextBoxMaxEmployee.Text);
+                    this.Close();
+                }
             };
+
         }
 
         private void AddDepartment_Load(object sender, EventArgs e)

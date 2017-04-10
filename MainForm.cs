@@ -17,17 +17,22 @@ namespace sh_lb2_v6
         public s()
         {
             InitializeComponent();
-            listBoxDep.DataSource = DepartmentList;
-            listBoxDep.DisplayMember = "numberOfMaxEmployees";
+            DepartmentList.Add(new Department("asda", 12, "asda"));
+            bsDepartment.DataSource = DepartmentList;
+            listBoxDep.DataSource = bsDepartment;
+            listBoxDep.DisplayMember = "departmantName";
             buttonAddDep.Click += (object s, EventArgs e) =>
             {
                 DepartmentOptions DepForm = new DepartmentOptions();
                 DepForm.Owner = this;
                 if(DepForm.ShowDialog() == DialogResult.OK)
                 {
+                    listBoxDep.BeginUpdate();
                     DepartmentList.Add(new Department(StaticClassDep.nameDep,
-                        StaticClassDep.maxEmployee, 
+                        StaticClassDep.maxEmployee,
                         StaticClassDep.ManagerName));
+                   // bsDepartment.ResetBindings(true);
+                    var result = MessageBox.Show("hey", "Error Window", MessageBoxButtons.OK);
                 }
             };
         }

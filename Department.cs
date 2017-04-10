@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace sh_lb2_v6
 {
     public class Department
     {
-        public string departmantName { private set; get; }
-        public int numberOfMaxEmployees { private set; get; }
-        public string managerName { private set; get; }
+        public string departmantName { set; get; }
+        public int numberOfMaxEmployees { set; get; }
+        public string managerName {  set; get; }
         private List<Employee> ListEmployee = new List<Employee>();
         public Department(string _depName, int _maxEmployees, string _nameManager)
         {
@@ -18,20 +19,31 @@ namespace sh_lb2_v6
         }
         public void ChangeDepartment(string _depName, int _maxEmployees, string _nameManager)
         {
-            if (_depName.Length > 0 && _nameManager.Length > 0)
+            try
             {
-                managerName = _nameManager;
-                departmantName = _depName;
+                if (_depName.Length > 0 && _nameManager.Length > 0)
+                {
+                    managerName = _nameManager;
+                    departmantName = _depName;
+                }
+                else
+                {
+                    throw new ArgumentException("Название департамента/имя менеджера не может быть пустым");
+                }
+                if (_maxEmployees > 0)
+                    numberOfMaxEmployees = _maxEmployees;
+                else
+                {
+                    throw new ArgumentException("Количество сотрудников не может быть меньше одного.");
+                }
             }
-            else
+            catch (ArgumentException e)
             {
-                throw new ArgumentException("Название департамента/имя менеджера не может быть пустым");
+                var result = MessageBox.Show(e.Message, "Error Window", MessageBoxButtons.OK);
             }
-            if (_maxEmployees > 0)
-                numberOfMaxEmployees = _maxEmployees;
-            else
+            catch (Exception e1)
             {
-                throw new ArgumentException("Количество сотрудников не может быть меньше одного.");
+                var result = MessageBox.Show(e1.Message, "Error Window", MessageBoxButtons.OK);
             }
         }
         public void AddEmployee(Employee _employee)
