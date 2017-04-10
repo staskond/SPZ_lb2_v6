@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxManagerName = new System.Windows.Forms.TextBox();
             this.maskedTextBoxMaxEmployee = new System.Windows.Forms.MaskedTextBox();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.btApply = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxDepName
@@ -85,11 +87,31 @@
             this.maskedTextBoxMaxEmployee.Size = new System.Drawing.Size(25, 20);
             this.maskedTextBoxMaxEmployee.TabIndex = 5;
             // 
+            // btCancel
+            // 
+            this.btCancel.Location = new System.Drawing.Point(255, 103);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(75, 23);
+            this.btCancel.TabIndex = 6;
+            this.btCancel.Text = "Отмена";
+            this.btCancel.UseVisualStyleBackColor = true;
+            // 
+            // btApply
+            // 
+            this.btApply.Location = new System.Drawing.Point(174, 103);
+            this.btApply.Name = "btApply";
+            this.btApply.Size = new System.Drawing.Size(75, 23);
+            this.btApply.TabIndex = 7;
+            this.btApply.Text = "Применить";
+            this.btApply.UseVisualStyleBackColor = true;
+            // 
             // DepartmentOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 94);
+            this.ClientSize = new System.Drawing.Size(349, 138);
+            this.Controls.Add(this.btApply);
+            this.Controls.Add(this.btCancel);
             this.Controls.Add(this.maskedTextBoxMaxEmployee);
             this.Controls.Add(this.textBoxManagerName);
             this.Controls.Add(this.label1);
@@ -112,5 +134,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxManagerName;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxMaxEmployee;
+        private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.Button btApply;
     }
 }

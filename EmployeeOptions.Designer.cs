@@ -34,6 +34,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1_salary = new System.Windows.Forms.TextBox();
             this.comboBox1_changedep = new System.Windows.Forms.ComboBox();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.btApply = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // maskedTextBox1_empname
@@ -90,11 +92,31 @@
             this.comboBox1_changedep.Text = "Выберите отдел";
             this.comboBox1_changedep.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // btCancel
+            // 
+            this.btCancel.Location = new System.Drawing.Point(189, 180);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(75, 23);
+            this.btCancel.TabIndex = 11;
+            this.btCancel.Text = "Отмена";
+            this.btCancel.UseVisualStyleBackColor = true;
+            // 
+            // btApply
+            // 
+            this.btApply.Location = new System.Drawing.Point(108, 180);
+            this.btApply.Name = "btApply";
+            this.btApply.Size = new System.Drawing.Size(75, 23);
+            this.btApply.TabIndex = 12;
+            this.btApply.Text = "Применить";
+            this.btApply.UseVisualStyleBackColor = true;
+            // 
             // EmployeeOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 209);
+            this.ClientSize = new System.Drawing.Size(288, 215);
+            this.Controls.Add(this.btApply);
+            this.Controls.Add(this.btCancel);
             this.Controls.Add(this.comboBox1_changedep);
             this.Controls.Add(this.textBox1_salary);
             this.Controls.Add(this.label3);
@@ -116,5 +138,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1_salary;
         private System.Windows.Forms.ComboBox comboBox1_changedep;
+        private System.Windows.Forms.Button btCancel;
+        private System.Windows.Forms.Button btApply;
     }
 }
