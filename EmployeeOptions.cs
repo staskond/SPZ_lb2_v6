@@ -17,6 +17,20 @@ namespace sh_lb2_v6
             InitializeComponent();
             tbFullName.Text = StaticClassEmployee.FullName;
             tbSalary.Text = StaticClassEmployee.Salary.ToString();
+            btApply.Click += (object s, EventArgs e) =>
+            {
+                if(tbFullName.Text.Length >= 1)
+                {
+                    StaticClassEmployee.FullName = tbFullName.Text;
+                    StaticClassEmployee.Salary = Convert.ToDecimal(tbSalary.Text);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Полное имя не должно быть пустым.", "Сообщение", MessageBoxButtons.OK);
+                }
+            };
             
         }
 

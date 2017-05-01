@@ -21,7 +21,7 @@ namespace sh_lb2_v6
             else
                 throw new ArgumentException("Введено неккоректное имя.");
 
-            if (Salary > 0)
+            if (_salary > 0)
                 Salary = _salary;
             else
                 throw new ArgumentException("Введена неккоректная оплата труда.");

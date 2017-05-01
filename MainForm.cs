@@ -18,10 +18,17 @@ namespace sh_lb2_v6
         public s()
         {
             InitializeComponent();
-            DepartmentList.Add(new Department("asda", 12, "asda"));
+            DepartmentList.Add(new Department("Бригада №6", 3, "Кондрюков"));
+            DepartmentList[0].AddEmployee(new Employee("Кондрюков Станислав", 11));
+            DepartmentList[0].AddEmployee(new Employee("Степанова Кристина", 11));
+            DepartmentList[0].AddEmployee(new Employee("Срибна Мария", 11));
+            bsEmployees.DataSource = DepartmentList[0].ListEmployee;
             bsDepartment.DataSource = DepartmentList;
             listBoxDep.DataSource = bsDepartment;
             listBoxDep.DisplayMember = "departmantName";
+            listBoxEmployee.DataSource = bsEmployees;
+            listBoxEmployee.DisplayMember = "FullName";
+            listBoxDep.MouseDoubleClick += new MouseEventHandler(DepartmentMouseDoubleClick);
             buttonAddDep.Click += (object s, EventArgs e) =>
             {
                 DepartmentOptions DepForm = new DepartmentOptions();
@@ -79,11 +86,13 @@ namespace sh_lb2_v6
                     if(EmployeeForm.ShowDialog() == DialogResult.OK)
                     {
                         DepartmentList[listBoxDep.SelectedIndex].AddEmployee(new Employee(StaticClassEmployee.FullName, StaticClassEmployee.Salary));
+                         bsEmployees.ResetBindings(true);
+                        StaticClassEmployee.NulableAllValue();
                     }
                 }
             };
         }
-
+        
 
         private void DepartmentMouseDoubleClick(object sender, MouseEventArgs e)
         {
