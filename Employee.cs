@@ -10,7 +10,11 @@ namespace sh_lb2_v6
     {
         public string FullName { private set; get; }
         public decimal Salary { private set; get; }
-        Employee(String _fullName, Decimal _salary)
+        public Employee(String _fullName, Decimal _salary)
+        {
+            ChangeEmployee(_fullName, _salary);
+        }
+        public void ChangeEmployee(String _fullName, Decimal _salary)
         {
             if (_fullName.Length > 0)
                 FullName = _fullName;

@@ -14,6 +14,7 @@ namespace sh_lb2_v6
     {
         List<Department> DepartmentList = new List<Department>();
         BindingSource bsDepartment = new BindingSource();
+        BindingSource bsEmployees = new BindingSource();
         public s()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace sh_lb2_v6
                         StaticClassDep.ManagerName));
                     bsDepartment.ResetBindings(true);
                     StaticClassDep.NulableAllValue();
+                   
                 }
             };
             buttonDelDep.Click += (object s, EventArgs e) =>
@@ -68,8 +70,26 @@ namespace sh_lb2_v6
                     MessageBox.Show("Cписок депортаментов пуст, изменять нечего.", "Сообщение", MessageBoxButtons.OK);
                 }
             };
-            
-    }
+            buttonAddEmployee.Click += (object s, EventArgs e) =>
+            {
+                if (bsDepartment.Count > 0)
+                {
+                    EmployeeOptions EmployeeForm = new EmployeeOptions();
+                    EmployeeForm.Owner = this;
+                    if(EmployeeForm.ShowDialog() == DialogResult.OK)
+                    {
+                        DepartmentList[listBoxDep.SelectedIndex].AddEmployee(new Employee(StaticClassEmployee.FullName, StaticClassEmployee.Salary));
+                    }
+                }
+            };
+        }
+
+
+        private void DepartmentMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            bsEmployees.DataSource = DepartmentList[listBoxDep.SelectedIndex].ListEmployee;
+            bsEmployees.ResetBindings(true);
+        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -12,7 +12,7 @@ namespace sh_lb2_v6
         public string departmantName { set; get; }
         public int numberOfMaxEmployees { set; get; }
         public string managerName {  set; get; }
-        private List<Employee> ListEmployee = new List<Employee>();
+        public List<Employee> ListEmployee = new List<Employee>();
         public Department(string _depName, int _maxEmployees, string _nameManager)
         {
             ChangeDepartment(_depName, _maxEmployees, _nameManager);

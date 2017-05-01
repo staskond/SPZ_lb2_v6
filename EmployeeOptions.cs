@@ -15,6 +15,9 @@ namespace sh_lb2_v6
         public EmployeeOptions()
         {
             InitializeComponent();
+            tbFullName.Text = StaticClassEmployee.FullName;
+            tbSalary.Text = StaticClassEmployee.Salary.ToString();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
