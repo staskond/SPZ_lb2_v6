@@ -91,6 +91,30 @@ namespace sh_lb2_v6
                     }
                 }
             };
+            buttonDelEmployee.Click += (object s, EventArgs e) =>
+            {
+                if (bsEmployees.Count > 0)
+                {
+                    bsEmployees.RemoveCurrent();
+                }
+            };
+
+            buttonChangeEmployee.Click += (object s, EventArgs e) =>
+            {
+                if(bsEmployees.Count > 0)
+                {
+                    StaticClassEmployee.FullName = DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].FullName;
+                    StaticClassEmployee.Salary = DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].Salary;
+                    EmployeeOptions EmployeeForm = new EmployeeOptions();
+                    EmployeeForm.Owner = this;
+                    if(EmployeeForm.ShowDialog() == DialogResult.OK)
+                    {
+                        DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].ChangeEmployee(StaticClassEmployee.FullName, StaticClassEmployee.Salary);
+                        bsEmployees.ResetBindings(false);
+                        StaticClassEmployee.NulableAllValue();
+                    }
+                }
+            };
         }
         
 
