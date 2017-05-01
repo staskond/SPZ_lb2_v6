@@ -31,10 +31,45 @@ namespace sh_lb2_v6
                         StaticClassDep.maxEmployee,
                         StaticClassDep.ManagerName));
                     bsDepartment.ResetBindings(true);
-                    var result = MessageBox.Show("hey", "Error Window", MessageBoxButtons.OK);
+                    StaticClassDep.NulableAllValue();
                 }
             };
-        }
+            buttonDelDep.Click += (object s, EventArgs e) =>
+            {
+                if (bsDepartment.Count > 0)
+                {
+                    bsDepartment.RemoveCurrent();
+                }
+                else
+                {
+                    MessageBox.Show("Cписок депортаментов пуст, удалять нечего.", "Сообщение", MessageBoxButtons.OK);
+                }
+            };
+            buttonChangeDep.Click += (object s, EventArgs e) =>
+            {
+                if (bsDepartment.Count > 0)
+                {
+                    StaticClassDep.nameDep = DepartmentList[listBoxDep.SelectedIndex].departmantName;
+                    StaticClassDep.maxEmployee = DepartmentList[listBoxDep.SelectedIndex].numberOfMaxEmployees;
+                    StaticClassDep.ManagerName = DepartmentList[listBoxDep.SelectedIndex].managerName;
+                    DepartmentOptions DepForm = new DepartmentOptions();
+                    DepForm.Owner = this;
+                    if (DepForm.ShowDialog() == DialogResult.OK)
+                    {
+                        DepartmentList[listBoxDep.SelectedIndex].ChangeDepartment(StaticClassDep.nameDep,
+                            StaticClassDep.maxEmployee,
+                            StaticClassDep.ManagerName);
+                        bsDepartment.ResetBindings(false);
+                    }
+                    StaticClassDep.NulableAllValue();
+                }
+                else
+                {
+                    MessageBox.Show("Cписок депортаментов пуст, изменять нечего.", "Сообщение", MessageBoxButtons.OK);
+                }
+            };
+            
+    }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -55,5 +90,6 @@ namespace sh_lb2_v6
         {
 
         }
+        
     }
 }

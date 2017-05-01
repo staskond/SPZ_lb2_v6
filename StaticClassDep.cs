@@ -11,5 +11,11 @@ namespace sh_lb2_v6
         public static string nameDep { get; set; }
         public static int maxEmployee { get; set; }
         public static string ManagerName { get; set; }
+        public static void NulableAllValue()
+        {
+            nameDep = null;
+            maxEmployee = 0;
+            ManagerName = null;
+        }
     }
 }
