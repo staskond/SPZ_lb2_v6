@@ -31,6 +31,11 @@ namespace sh_lb2_v6
                     MessageBox.Show("Полное имя не должно быть пустым.", "Сообщение", MessageBoxButtons.OK);
                 }
             };
+            btCancel.Click += (object s, EventArgs e) =>
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            };
             
         }
 

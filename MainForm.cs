@@ -87,8 +87,9 @@ namespace sh_lb2_v6
                     {
                         DepartmentList[listBoxDep.SelectedIndex].AddEmployee(new Employee(StaticClassEmployee.FullName, StaticClassEmployee.Salary));
                          bsEmployees.ResetBindings(true);
-                        StaticClassEmployee.NulableAllValue();
+                        
                     }
+                    StaticClassEmployee.NulableAllValue();
                 }
             };
             buttonDelEmployee.Click += (object s, EventArgs e) =>
@@ -111,8 +112,9 @@ namespace sh_lb2_v6
                     {
                         DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].ChangeEmployee(StaticClassEmployee.FullName, StaticClassEmployee.Salary);
                         bsEmployees.ResetBindings(false);
-                        StaticClassEmployee.NulableAllValue();
+                        
                     }
+                    StaticClassEmployee.NulableAllValue();
                 }
             };
         }
