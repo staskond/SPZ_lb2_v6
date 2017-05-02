@@ -81,15 +81,22 @@ namespace sh_lb2_v6
             {
                 if (bsDepartment.Count > 0)
                 {
-                    EmployeeOptions EmployeeForm = new EmployeeOptions();
-                    EmployeeForm.Owner = this;
-                    if(EmployeeForm.ShowDialog() == DialogResult.OK)
+                    if (DepartmentList[listBoxDep.SelectedIndex].ListEmployee.Count < DepartmentList[listBoxDep.SelectedIndex].numberOfMaxEmployees)
                     {
-                        DepartmentList[listBoxDep.SelectedIndex].AddEmployee(new Employee(StaticClassEmployee.FullName, StaticClassEmployee.Salary));
-                         bsEmployees.ResetBindings(true);
-                        
+                        EmployeeOptions EmployeeForm = new EmployeeOptions();
+                        EmployeeForm.Owner = this;
+                        if (EmployeeForm.ShowDialog() == DialogResult.OK)
+                        {
+                            DepartmentList[listBoxDep.SelectedIndex].AddEmployee(new Employee(StaticClassEmployee.FullName, StaticClassEmployee.Salary));
+                            bsEmployees.ResetBindings(true);
+
+                        }
+                        StaticClassEmployee.NulableAllValue();
                     }
-                    StaticClassEmployee.NulableAllValue();
+                    else
+                    {
+                        MessageBox.Show("Достигнуто максимальное количество сотрудников!", "Сообщение", MessageBoxButtons.OK);
+                    }
                 }
             };
             buttonDelEmployee.Click += (object s, EventArgs e) =>
