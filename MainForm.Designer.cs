@@ -38,6 +38,7 @@
             this.buttonChangeEmployee = new System.Windows.Forms.Button();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.buttonSortEmployees = new System.Windows.Forms.Button();
+            this.buttonSortSalary = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxDep
@@ -120,15 +121,26 @@
             this.buttonSortEmployees.Size = new System.Drawing.Size(166, 23);
             this.buttonSortEmployees.TabIndex = 8;
             this.buttonSortEmployees.TabStop = false;
-            this.buttonSortEmployees.Text = "Сортировать сотрудников";
+            this.buttonSortEmployees.Text = "Сортировать по Имени";
             this.buttonSortEmployees.UseVisualStyleBackColor = true;
             this.buttonSortEmployees.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonSortSalary
+            // 
+            this.buttonSortSalary.Location = new System.Drawing.Point(217, 473);
+            this.buttonSortSalary.Name = "buttonSortSalary";
+            this.buttonSortSalary.Size = new System.Drawing.Size(166, 23);
+            this.buttonSortSalary.TabIndex = 9;
+            this.buttonSortSalary.TabStop = false;
+            this.buttonSortSalary.Text = "Сортировать по ЗП";
+            this.buttonSortSalary.UseVisualStyleBackColor = true;
             // 
             // s
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 482);
+            this.ClientSize = new System.Drawing.Size(389, 499);
+            this.Controls.Add(this.buttonSortSalary);
             this.Controls.Add(this.buttonSortEmployees);
             this.Controls.Add(this.buttonChangeEmployee);
             this.Controls.Add(this.buttonDelEmployee);
@@ -157,6 +169,7 @@
         private System.Windows.Forms.Button buttonChangeEmployee;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.Button buttonSortEmployees;
+        private System.Windows.Forms.Button buttonSortSalary;
     }
 }
 

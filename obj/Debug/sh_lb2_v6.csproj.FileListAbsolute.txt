@@ -10,3 +10,15 @@ c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\D
 c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.csproj.GenerateResource.Cache
 c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.exe
 c:\users\kripec'\documents\visual studio 2017\Projects\sh_lb2_v6\sh_lb2_v6\obj\Debug\sh_lb2_v6.pdb
+D:\Новая папка\SPZ_lb2_v6\bin\Debug\sh_lb2_v6.exe.config
+D:\Новая папка\SPZ_lb2_v6\bin\Debug\sh_lb2_v6.exe
+D:\Новая папка\SPZ_lb2_v6\bin\Debug\sh_lb2_v6.pdb
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.csprojResolveAssemblyReference.cache
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.DepartmentOptions.resources
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.EmployeeOptions.resources
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.s.resources
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.Properties.Resources.resources
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.Sort.resources
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.csproj.GenerateResource.Cache
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.exe
+D:\Новая папка\SPZ_lb2_v6\obj\Debug\sh_lb2_v6.pdb

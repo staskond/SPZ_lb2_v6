@@ -15,13 +15,23 @@ namespace sh_lb2_v6
         List<Department> DepartmentList = new List<Department>();
         BindingSource bsDepartment = new BindingSource();
         BindingSource bsEmployees = new BindingSource();
+        List<Employee> tmpEmployee = new List<Employee>();
+        int SelectSort = 0;
         public s()
         {
             InitializeComponent();
             DepartmentList.Add(new Department("Бригада №6", 3, "Кондрюков"));
-            DepartmentList[0].AddEmployee(new Employee("Кондрюков Станислав", 11));
+            DepartmentList.Add(new Department("Университет", 800, "Дэкан"));
+            DepartmentList[0].AddEmployee(new Employee("Кондрюков Станислав", 10));
             DepartmentList[0].AddEmployee(new Employee("Степанова Кристина", 11));
-            DepartmentList[0].AddEmployee(new Employee("Срибна Мария", 11));
+            DepartmentList[0].AddEmployee(new Employee("Срибна Мария", 15));
+            DepartmentList[1].AddEmployee(new Employee("Кужебяков Сергей", 6300));
+            DepartmentList[1].AddEmployee(new Employee("Мартыненко Никита", 5600));
+            DepartmentList[1].AddEmployee(new Employee("Кучеренко Мария", 6500));
+            DepartmentList[1].AddEmployee(new Employee("Кужебяков Сергей", 6300));
+            DepartmentList[1].AddEmployee(new Employee("Джонсон Эколс", 2000));
+            DepartmentList[1].AddEmployee(new Employee("Сободаж Дарья", 1700));
+            DepartmentList[1].AddEmployee(new Employee("Иванской Дмитрий", 9900));
             bsEmployees.DataSource = DepartmentList[0].ListEmployee;
             bsDepartment.DataSource = DepartmentList;
             listBoxDep.DataSource = bsDepartment;
@@ -29,6 +39,7 @@ namespace sh_lb2_v6
             listBoxEmployee.DataSource = bsEmployees;
             listBoxEmployee.DisplayMember = "FullName";
             listBoxDep.MouseDoubleClick += new MouseEventHandler(DepartmentMouseDoubleClick);
+            listBoxEmployee.MouseDoubleClick += new MouseEventHandler(EmployeeMouseDoubleClick);
             buttonAddDep.Click += (object s, EventArgs e) =>
             {
                 DepartmentOptions DepForm = new DepartmentOptions();
@@ -124,9 +135,92 @@ namespace sh_lb2_v6
                     StaticClassEmployee.NulableAllValue();
                 }
             };
-        }
-        
+            buttonSortEmployees.Click += (object s, EventArgs e) =>
+            {
+                switch (SelectSort)
+                {
+                    case 0:
+                        {
+                            var empl0 = from emp in DepartmentList[listBoxDep.SelectedIndex].ListEmployee
+                                        orderby emp.FullName ascending
+                                        select emp;
+                            foreach (var employeeGroup in empl0)
+                            {
+                                tmpEmployee.Add(new Employee(employeeGroup.FullName, employeeGroup.Salary));
+                            }
+                            RefreshListAfterSort();
+                            SelectSort += 1;
+                            break;
+                        }
+                    case 1:
+                        {
+                            var empl0 = from emp in DepartmentList[listBoxDep.SelectedIndex].ListEmployee
+                                        orderby emp.FullName descending
+                                        select emp;
+                            foreach (var employeeGroup in empl0)
+                            {
+                                tmpEmployee.Add(new Employee(employeeGroup.FullName, employeeGroup.Salary));
+                            }
+                            RefreshListAfterSort();
+                            SelectSort = 0;
+                            break;
+                        }
+                    default:
+                        SelectSort = 0; break;
 
+                }
+            };
+            buttonSortSalary.Click += (object s, EventArgs e) =>
+                {
+                    switch (SelectSort)
+                   {
+                        case 0:
+                            {
+                                var empl0 = from emp in DepartmentList[listBoxDep.SelectedIndex].ListEmployee
+                                            orderby emp.Salary ascending
+                                            select emp;
+
+                                foreach (var employeeGroup in empl0)
+                                {
+                                    tmpEmployee.Add(new Employee(employeeGroup.FullName, employeeGroup.Salary));
+                                }
+                                RefreshListAfterSort();
+                                SelectSort += 1;
+                                break;
+                            }
+                        case 1:
+                            {
+                                var empl0 = from emp in DepartmentList[listBoxDep.SelectedIndex].ListEmployee
+                                            orderby emp.Salary descending
+                                            select emp;
+                                foreach (var employeeGroup in empl0)
+                                {
+                                    tmpEmployee.Add(new Employee(employeeGroup.FullName, employeeGroup.Salary));
+                                }
+                                RefreshListAfterSort();
+                                SelectSort = 0;
+
+                                break;
+                            }
+                        default:
+                            SelectSort = 0; break;
+                    };
+            };
+        }
+
+        private void EmployeeMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void RefreshListAfterSort()
+        {
+            DepartmentList[listBoxDep.SelectedIndex].ListEmployee.Clear();
+            DepartmentList[listBoxDep.SelectedIndex].ListEmployee.AddRange(tmpEmployee);
+            tmpEmployee.Clear();
+            bsEmployees.DataSource = DepartmentList[listBoxDep.SelectedIndex].ListEmployee;
+            bsEmployees.ResetBindings(true);
+        }
         private void DepartmentMouseDoubleClick(object sender, MouseEventArgs e)
         {
             bsEmployees.DataSource = DepartmentList[listBoxDep.SelectedIndex].ListEmployee;
