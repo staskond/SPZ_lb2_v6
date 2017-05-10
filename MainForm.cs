@@ -120,20 +120,7 @@ namespace sh_lb2_v6
 
             buttonChangeEmployee.Click += (object s, EventArgs e) =>
             {
-                if(bsEmployees.Count > 0)
-                {
-                    StaticClassEmployee.FullName = DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].FullName;
-                    StaticClassEmployee.Salary = DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].Salary;
-                    EmployeeOptions EmployeeForm = new EmployeeOptions();
-                    EmployeeForm.Owner = this;
-                    if(EmployeeForm.ShowDialog() == DialogResult.OK)
-                    {
-                        DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].ChangeEmployee(StaticClassEmployee.FullName, StaticClassEmployee.Salary);
-                        bsEmployees.ResetBindings(false);
-                        
-                    }
-                    StaticClassEmployee.NulableAllValue();
-                }
+                ChangeEmployee();
             };
             buttonSortEmployees.Click += (object s, EventArgs e) =>
             {
@@ -210,7 +197,25 @@ namespace sh_lb2_v6
 
         private void EmployeeMouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+            ChangeEmployee();
+        }
+
+        private void ChangeEmployee()
+        {
+            if (bsEmployees.Count > 0)
+            {
+                StaticClassEmployee.FullName = DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].FullName;
+                StaticClassEmployee.Salary = DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].Salary;
+                EmployeeOptions EmployeeForm = new EmployeeOptions();
+                EmployeeForm.Owner = this;
+                if (EmployeeForm.ShowDialog() == DialogResult.OK)
+                {
+                    DepartmentList[listBoxDep.SelectedIndex].ListEmployee[listBoxEmployee.SelectedIndex].ChangeEmployee(StaticClassEmployee.FullName, StaticClassEmployee.Salary);
+                    bsEmployees.ResetBindings(false);
+
+                }
+                StaticClassEmployee.NulableAllValue();
+            }
         }
 
         private void RefreshListAfterSort()
